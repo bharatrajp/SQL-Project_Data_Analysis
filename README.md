@@ -1,1 +1,7 @@
-Update the contents later
+
+# INTRODUCTION 
+# BACKGROUND
+# TOOLS I USED
+# THE ANALYSIS 
+# WHAT I LEARNED
+# CONCLUSION 
