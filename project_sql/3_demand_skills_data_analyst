@@ -1,0 +1,23 @@
+/* 
+--Question: What are thetop 10 in demand skills required for data analyst role?
+-- join the job posting table to inner join 
+-- identify the top 10 in demand skills for data analyst 
+-- focus on all the job_postings 
+-- WHY ? retrive the top 10 skills with the highest demand in the job markets .
+*/
+
+
+SELECT 
+    skills,
+    COUNT(skills_job_dim.job_id) AS demand_count
+FROM    
+    job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE 
+    job_title_short = 'Data Analyst' 
+GROUP BY 
+    skills
+ORDER BY 
+    demand_count DESC
+LIMIT 10;
